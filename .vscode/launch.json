@@ -1,0 +1,28 @@
+{
+    /*
+        VS Code Launch configurations for the LEAN DataSource Data Processing
+
+        Data Processing:
+        Builds the project with dotnet 6 and then launches the program using coreclr; supports debugging.
+        In order to use this you need dotnet 6 on your system path, as well as the C# extension from the 
+        marketplace.
+    */
+
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Data Processing",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/DataProcessing/bin/Debug/net6.0/process.dll",
+            "args": [
+                "--config",
+                "${workspaceFolder}/DataProcessing/config.json"
+            ],
+            "cwd": "${workspaceFolder}/DataProcessing/bin/Debug/net6.0/",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "name": "Lean DataSource Development",
+
+    // The workspace mount and folder matches the local workspace name
+    "workspaceMount": "source=${localWorkspaceFolder},target=/Lean.DataSource.SDK,type=bind",
+    "workspaceFolder": "/Lean.DataSource.SDK",
+
+    // Use Lean Latest image
+    "image": "quantconnect/research:latest",
+
+    // Set *default* container specific settings.json values on container create.
+    "settings": { 
+        "terminal.integrated.profiles.linux": {
+            "bash": {
+                "path": "bash",
+                "icon": "terminal-bash"
+            }
+        }
+    },
+
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": ["ms-dotnettools.csharp", "ms-python.python", "ms-python.vscode-pylance", "formulahendry.dotnet-test-explorer", "eamodio.gitlens", "yzhang.markdown-all-in-one"],
+
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [],
+
+    // Add mounts to docker container
+    "mounts": [ 
+        // Example data mount from local machine:
+        // We will mount the temporary output directory to a folder with the same name
+        "source=C:/temp-output-directory,target=/temp-output-directory,type=bind,consistency=cached"
+    ]
+}
